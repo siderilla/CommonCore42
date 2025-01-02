@@ -3,12 +3,18 @@
 void	ft_putptr(void *ptr, int upper)
 {
 	if (!ptr)
+	{
 		ft_putstr_fd("(nil)", 1);
-	ft_putstr_fd("0x", 1);
-	ft_puthex((unsigned long)ptr, upper);
+		return ;
+	}
+	else
+	{
+		ft_putstr_fd("0x", 1);
+		ft_puthex((unsigned long)ptr, upper);
+	}
 }
 
-void	ft_puthex(unsigned long n, int upper)
+void	ft_puthex(unsigned int n, int upper)
 {
 	char	*base;
 	if (upper)
@@ -42,7 +48,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 
-	if (n == -2147483648)
+	if (n == INT_MIN)
 	{
 		write(fd, "-2147483648", 11);
 		return ;
@@ -53,9 +59,7 @@ void	ft_putnbr_fd(int n, int fd)
 		n = -n;
 	}
 	if (n > 9)
-	{
 		ft_putnbr_fd(n / 10, fd);
-	}
 	c = n % 10 + '0';
 	write(fd, &c, 1);
 }
@@ -63,8 +67,9 @@ void	ft_putnbr_fd(int n, int fd)
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+		write(fd, "(null)", 6);
+	else
+		write(fd, s, ft_strlen(s));
 }
 
 size_t	ft_strlen(const char *s)
@@ -72,7 +77,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while ((s[len] != '\0'))
+	while ((s && s[len] != '\0'))
 	{
 		len++;
 	}

@@ -1,6 +1,7 @@
 SRCS = \
 ft_printf.c \
-ft_printf_utils.c \
+print_char_str.c \
+print_hex_ptr_nbr.c \
 
 NAME = libftprintf.a
 CC = cc

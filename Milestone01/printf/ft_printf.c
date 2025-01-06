@@ -3,7 +3,6 @@
 static int	ft_handle_format(const char *format, va_list args)
 {
 	int		count;
-	void	*ptr;
 
 	count = 0;
 	if (*format == 'c')
@@ -11,10 +10,7 @@ static int	ft_handle_format(const char *format, va_list args)
 	else if (*format == 's')
 		count += ft_putstr(va_arg(args, char *));
 	else if (*format == 'p')
-	{
-		ptr = va_arg(args, void *);
-		count += ft_putptr(ptr, 0);
-	}
+		count += ft_putptr(va_arg(args, void *), 0);
 	else if (*format == 'd' || *format == 'i')
 		count += ft_putnbr(va_arg(args, int));
 	else if (*format == 'u')

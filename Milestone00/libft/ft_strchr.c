@@ -14,8 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
+	// if (!s)
+	// 	return (NULL);
 	while ((unsigned char)*s != (unsigned char)c && (unsigned char)*s != '\0')
 		s++;
 	if ((unsigned char)*s == (unsigned char)c)
@@ -24,11 +24,11 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 }
 
-#include <stdio.h>
-int	main()
-{
-	char	str[] = "Ciapapapapapaoooo";
-	int	ch = 'o';
-	char	*result = ft_strchr(str, ch);
-	printf("Found: %c\n", *result);
-}
+// #include <stdio.h>
+// int	main()
+// {
+// 	char	str[] = "Ciapapapapapaoooo";
+// 	int	ch = 'o';
+// 	char	*result = ft_strchr(str, ch);
+// 	printf("Found: %c\n", *result);
+// }

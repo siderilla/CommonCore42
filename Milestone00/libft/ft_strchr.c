@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	// if (!s)
-	// 	return (NULL);
 	while ((unsigned char)*s != (unsigned char)c && (unsigned char)*s != '\0')
 		s++;
 	if ((unsigned char)*s == (unsigned char)c)

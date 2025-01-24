@@ -84,42 +84,23 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-// char	*ft_substr(char const *s, unsigned int start, size_t len)
-// {
-// 	char	*sub;
-// 	char	*start_sub;
-// 	size_t	strlen;
-
-// 	strlen = ft_strlen(s);
-// 	if (!s || start >= strlen)
-// 		return (ft_strdup(""));
-// 	if (len > strlen - start)
-// 		len = strlen - start;
-// 	sub = malloc(len + 1);
-// 	if (!sub)
-// 		return (NULL);
-// 	start_sub = sub;
-// 	while (len--)
-// 		*sub++ = s[start++];
-// 	*sub = '\0';
-// 	return (start_sub);
-// }
-
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char    *substr;
-    int     i;
-    if (s == NULL)
-        return (NULL);
-    i = 0;
-    substr = (char *)malloc((len + 1));
-    while (len > 0 && s[start] != '\0')
-    {
-        substr[i] = s[start];
-        i++;
-        start++;
-        len--;
-    }
-    substr[i] = '\0';
-    return (substr);
+	char	*sub;
+	char	*start_sub;
+	size_t	strlen;
+
+	strlen = ft_strlen(s);
+	if (!s || start >= strlen)
+		return (ft_strdup(""));
+	if (len > strlen - start)
+		len = strlen - start;
+	sub = malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	start_sub = sub;
+	while (len--)
+		*sub++ = s[start++];
+	*sub = '\0';
+	return (start_sub);
 }

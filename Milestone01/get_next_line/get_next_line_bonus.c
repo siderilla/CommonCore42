@@ -33,8 +33,8 @@ static int	read_and_update_stock(int fd, char *read_buffer, char **stock)
 			*stock = temp_stock;
 			newline_ptr = ft_strchr(*stock, '\n');
 		}
-		else if (nbytes == 0)
-			return (1);
+		// else if (nbytes == 0) // una toppa 
+		// 	return (1);
 		else
 			return (-1);
 	}

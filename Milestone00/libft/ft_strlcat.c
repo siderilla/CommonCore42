@@ -33,14 +33,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[d + i] = '\0';
 	return (d + s);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// int main()
-// {
-// 	char dst[14] = "Bulbasaur";
-// 	const char src[] = " is my fav";
-// 	printf("My src string: %s\n and my dst: %s\n", src, dst);
-// 	ft_strlcat(dst, src, sizeof(dst));
-// 	printf("My concat strings: %s\n", dst);
-// }
+/*
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+	char dst[14] = "Bulbasaur";
+	const char src[] = " is my fav";
+	printf("My src string: %s\n and my dst: %s\n", src, dst);
+	ft_strlcat(dst, src, sizeof(dst));
+	printf("My concat strings: %s\n", dst);
+}*/

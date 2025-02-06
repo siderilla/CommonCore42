@@ -33,8 +33,6 @@ static int	read_and_update_stock(int fd, char *read_buffer, char **stock)
 			*stock = temp_stock;
 			newline_ptr = ft_strchr(*stock, '\n');
 		}
-		else if (nbytes == 0) // una toppa 
-			return (1);
 		else
 			return (-1);
 	}
@@ -107,7 +105,7 @@ char	*get_next_line(int fd)
 // #include <stdio.h>
 // int	main()
 // {
-// 	int	fd = open("binary_file", O_RDONLY);
+// 	int	fd = open("test.txt", O_RDONLY);
 // 	// int	fd = 5;
 // 	char	*line;
 // 	if (fd < 0)
@@ -146,25 +144,3 @@ char	*get_next_line(int fd)
 // 	close(fd);
 // 	return (0);
 // }
-
-#include <stdio.h>
-int	main()
-{
-	int	fd = open("test.txt", O_RDONLY);
-	// HOW TO SEE ALL REACHABLE - troncando all'improvviso la funzione //
-	char	*line;
-	if (fd < 0)
-	{
-		perror("");
-		return (1);
-	}
-	line = get_next_line(fd);
-	printf("%s", line);
-	free(line);
-
-	close(fd);
-	line = get_next_line(fd); 
-
-	// possibile workaround per all reacheble (riavviare gnl dopo la chiusura di fd)
-	return (0);
-}

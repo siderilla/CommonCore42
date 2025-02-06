@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   print_char_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-pra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 13:28:34 by sde-pra           #+#    #+#             */
-/*   Updated: 2024/12/01 19:07:54 by sde-pra          ###   ########.fr       */
+/*   Created: 2025/01/08 15:48:10 by sde-pra           #+#    #+#             */
+/*   Updated: 2025/01/08 15:48:13 by sde-pra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+ssize_t	ft_putstr(char *s)
 {
-	while ((unsigned char)*s != (unsigned char)c && (unsigned char)*s != '\0')
-	{
-		s++;
-	}
-	if ((unsigned char)*s == (unsigned char)c)
-	{
-		return ((char *)s);
-	}
+	if (!s)
+		return (write(1, "(null)", 6));
 	else
-	{
-		return (NULL);
-	}
+		return (write(1, s, ft_strlen(s)));
 }
-/*
-#include <stdio.h>
-int	main()
+
+size_t	ft_strlen(const char *s)
 {
-	char	str[] = "Ciapapapapapaoooo";
-	int	ch = 'o';
-	char	*result = ft_strchr(str, ch);
-	printf("Found: %c\n", *result);
-}*/
+	size_t	len;
+
+	len = 0;
+	while ((s && s[len] != '\0'))
+	{
+		len++;
+	}
+	return (len);
+}
+
+ssize_t	ft_putchar(char c)
+{
+	return (write(1, &c, 1));
+}

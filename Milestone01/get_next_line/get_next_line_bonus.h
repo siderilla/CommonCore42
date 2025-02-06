@@ -18,7 +18,7 @@
 # endif
 
 # ifndef FD_MAX
-#  define FD_MAX 4096
+#  define FD_MAX 1024
 # endif
 
 # include <unistd.h>

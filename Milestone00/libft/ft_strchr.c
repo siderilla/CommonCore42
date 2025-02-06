@@ -6,7 +6,7 @@
 /*   By: sde-pra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 13:28:34 by sde-pra           #+#    #+#             */
-/*   Updated: 2024/12/01 19:07:54 by sde-pra          ###   ########.fr       */
+/*   Updated: 2025/02/06 22:13:31 by sde-pra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	if ((unsigned char)*s == (unsigned char)c)
 	{
 		return ((char *)s);
-	}
+	}>
 	else
 	{
 		return (NULL);

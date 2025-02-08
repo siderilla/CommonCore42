@@ -6,7 +6,7 @@
 /*   By: sde-pra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 22:19:17 by sde-pra           #+#    #+#             */
-/*   Updated: 2025/02/06 22:19:19 by sde-pra          ###   ########.fr       */
+/*   Updated: 2025/02/06 23:08:09 by sde-pra          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ typedef struct pipefd
 	int	write_fd;
 }					t_pipefd;
 
-int	open_files(char *argv[]);
-
+void		redirect_dup(int fd_in, int fd_out);
+t_pipefd	to_pipe();
+int			open_files(char *argv[], int *file1, int *file2);
 
 # endif
